@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'tutoDjangoBoard.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tutoBoard',
+        'NAME': 'db_tutoboard',
         'USER': 'woongkaa',
-        'PASSWORD': '12345678',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': '',
     }

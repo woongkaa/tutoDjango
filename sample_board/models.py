@@ -2,16 +2,17 @@
 
 from django.db import models
 
-# Create your models here.
 
 class Category(models.Model):
     class Meta:
         verbose_name = u'분류'
         ordering = ['name']
+
     name = models.CharField(verbose_name=u'이름', max_length=50)
 
     def __unicode__(self):
         return self.name
+
 
 class Post(models.Model):
     class Meta:

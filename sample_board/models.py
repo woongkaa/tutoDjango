@@ -28,4 +28,5 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
+        #모델의 개별데이터에 접근하는 url을 문자열로 반환한다
         return reverse('detail', kwargs={'pk': self.id})

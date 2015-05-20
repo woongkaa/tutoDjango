@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import ListView, DetailView, CreateView
-from sample_board.models import Post
+from sample_board.models import Post, Category
 
 
 # FBV
@@ -20,6 +20,12 @@ class PostList(ListView):
     model = Post
     template_name = 'home.html'
 
+    def get_context_data(self, **kwargs):
+        #context를 super에서 받아와서, 다시 넘기는 것인디...super는 ListView의 그거인듯.
+        context = super(PostList, self).get_context_data(**kwargs)
+        categories = Category.objects.all()
+        context['categories'] = categories
+        return context
 
 class PostDetail(DetailView):
     model = Post
